@@ -15,3 +15,8 @@ Player::Player(std::string name, Sign signUsed = Sign::X, bool isFirst = true) :
 void Player::PlaceSignOnBoard()
 {
 }
+
+Sign Player::GetSignUsed()
+{
+	return m_signUsed;
+}

@@ -7,9 +7,10 @@ class Player
 
 public:
 
-	Player(std::string name);
+	Player();
 	Player(std::string name, Sign signUsed, bool isFirst);
 	void PlaceSignOnBoard();
+	Sign GetSignUsed() const;
 
 private:
 

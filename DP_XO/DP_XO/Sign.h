@@ -1,7 +1,7 @@
 enum class Sign {
 
 	X,
-	Y,
+	O,
 	NONE
 
 };
