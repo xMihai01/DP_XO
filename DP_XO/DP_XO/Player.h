@@ -8,9 +8,16 @@ class Player
 public:
 
 	Player();
-	Player(std::string name, Sign signUsed, bool isFirst);
+	Player(const std::string& name, Sign signUsed, bool isFirst);
 	void PlaceSignOnBoard();
+
 	Sign GetSignUsed() const;
+	std::string GetNameUsed() const;
+	bool GetIsFirst() const;
+
+	void SetName(const std::string& name);
+	void SetSignUsed(Sign sign);
+	void SetIsFirst(bool isFirst);
 
 private:
 

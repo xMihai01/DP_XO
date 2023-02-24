@@ -11,7 +11,8 @@ class Board
 public:
 	Board();
 	std::array<std::array<Sign, boardSize>, boardSize> GetBoard();
-	void setOption(uint32_t option, const Player&);
+	bool setOption(uint32_t option, const Player& player);
+	void ResetBoard();
 
 private:
 	std::array<std::array<Sign,boardSize>,boardSize> m_board;
