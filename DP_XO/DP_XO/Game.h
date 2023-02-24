@@ -17,8 +17,9 @@ public:
 private:
 
 	Board m_board;
-	Player *m_player;
-	Player *m_robot;
+	Player m_player;
+	Player m_robot;
+	uint8_t m_turnNumber;
 
 	bool m_isGameRunning;
 
