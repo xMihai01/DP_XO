@@ -9,7 +9,6 @@ public:
 
 	Player();
 	Player(const std::string& name, Sign signUsed, bool isFirst);
-	void PlaceSignOnBoard();
 
 	Sign GetSignUsed() const;
 	std::string GetNameUsed() const;

@@ -14,10 +14,6 @@ Player::Player(const std::string& name, Sign signUsed = Sign::X, bool isFirst = 
 {
 }
 
-void Player::PlaceSignOnBoard()
-{
-}
-
 Sign Player::GetSignUsed() const
 {
 	return m_signUsed;

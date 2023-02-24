@@ -1,9 +1,9 @@
 #include "Game.h"
 #include <algorithm>
 
-Game::Game()
+Game::Game(std::string username)
 {
-	m_player = Player("Player", Sign::X, true);
+	m_player = Player(username, Sign::X, true);
 	m_robot = Player("Robot", Sign::O, false);
 	m_turnNumber = 0;
 	
@@ -23,6 +23,7 @@ void Game::NewGame()
 
 	m_board.ResetBoard();
 
+	m_turnNumber = 0;
 
 }
 

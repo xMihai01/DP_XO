@@ -11,6 +11,10 @@ public:
     DP_XO(QWidget *parent = nullptr);
     ~DP_XO();
 
+private slots:
+
+    void joinButtonClicked();
+
 private:
-    Ui::DP_XOClass ui;
+    Ui::DP_XOClass *ui;
 };

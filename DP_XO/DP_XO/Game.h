@@ -9,7 +9,7 @@ class Game
 
 public:
 
-	Game();
+	Game(std::string username);
 
 	void NewGame();
 	void RunGame();

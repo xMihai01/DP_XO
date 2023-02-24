@@ -1,4 +1,5 @@
 #include "DP_XO.h"
+#include <iostream>
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])

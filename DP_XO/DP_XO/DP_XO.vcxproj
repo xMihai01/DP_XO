@@ -85,16 +85,19 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Player.cpp" />
     <QtRcc Include="DP_XO.qrc" />
     <QtUic Include="DP_XO.ui" />
     <QtMoc Include="DP_XO.h" />
     <ClCompile Include="DP_XO.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="GameWindow.ui" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Game.h" />
+    <QtMoc Include="GameWindow.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Sign.h" />
   </ItemGroup>
