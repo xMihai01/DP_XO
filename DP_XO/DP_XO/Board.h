@@ -23,6 +23,8 @@ public:
 	BoardState CheckGameState();
 	bool setOption(uint32_t option, const Player& player);
 
+	Sign GetBoardSlotState(int position) const;
+
 private:
 	std::array<std::array<Sign,boardSize>,boardSize> m_board;
 	std::unordered_set<uint8_t> m_availableIndices;

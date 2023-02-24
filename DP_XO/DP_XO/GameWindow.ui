@@ -23,130 +23,182 @@
     <rect>
      <x>120</x>
      <y>70</y>
-     <width>311</width>
-     <height>211</height>
+     <width>446</width>
+     <height>214</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QLabel" name="label4">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label7">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
-     <widget class="QLabel" name="label1">
+     <widget class="QPushButton" name="slot1">
       <property name="font">
        <font>
-        <pointsize>20</pointsize>
+        <pointsize>48</pointsize>
        </font>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="label2">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="slot4">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLabel" name="label3">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLabel" name="label5">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
+     <widget class="QPushButton" name="slot5">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QLabel" name="label9">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="slot7">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QLabel" name="label6">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="slot2">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
       </property>
       <property name="text">
        <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="flat">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QLabel" name="label8">
-      <property name="frameShape">
-       <enum>QFrame::WinPanel</enum>
+     <widget class="QPushButton" name="slot8">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
       </property>
       <property name="text">
        <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="slot3">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="slot6">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="slot9">
+      <property name="font">
+       <font>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>

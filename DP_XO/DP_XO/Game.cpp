@@ -1,11 +1,13 @@
 #include "Game.h"
 #include <algorithm>
+#include <qdebug.h>
 
 Game::Game(std::string username)
 {
 	m_player = Player(username, Sign::X, true);
 	m_robot = Player("Robot", Sign::O, false);
 	m_turnNumber = 0;
+	m_gameState = GameState::RUNNING;
 	
 	m_isGameRunning = false;
 }
@@ -24,6 +26,8 @@ void Game::NewGame()
 	m_board.ResetBoard();
 
 	m_turnNumber = 0;
+
+	m_gameState = GameState::RUNNING;
 
 }
 
@@ -57,3 +61,34 @@ void Game::RunGame()
 
 	}
 }
+
+void Game::CheckGameState()
+{
+	Board::BoardState boardState = m_board.CheckGameState();
+
+	switch (boardState)
+	{
+	case Board::BoardState::Win:
+		m_gameState = GameState::WON;
+		break;
+	case Board::BoardState::Draw:
+		m_gameState = GameState::DRAW;
+		break;
+	case Board::BoardState::Unfinished:
+		break;
+	default:
+		break;
+	}
+}
+
+uint8_t Game::SetOptionForRobot()
+{
+	std::unordered_set<uint8_t> availableIndices = m_board.GetAvailableIndices();
+	uint8_t randomIndex = rand() % availableIndices.size();
+	auto it = std::begin(availableIndices);
+	std::advance(it, randomIndex);
+	m_board.setOption(*it, m_robot);
+
+	return *it;
+}
+

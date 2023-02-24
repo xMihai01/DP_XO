@@ -3,12 +3,14 @@
 
 #include <QWidget>
 #include "Game.h"
+#include <vector>
+#include <QPushButton>
 
 namespace Ui {
 class GameWindow;
 }
 
-class GameWindow : public QWidget
+class GameWindow : public QWidget, public Game
 {
     Q_OBJECT
 
@@ -16,9 +18,15 @@ public:
     explicit GameWindow(QString username, QWidget *parent = nullptr);
     ~GameWindow();
 
+private slots:
+
+    void slotClicked();
+
 private:
     Ui::GameWindow *ui;
-    Game game;
+
+    std::vector<QPushButton*> boardSlots;
+    //Game game;
 };
 
 #endif // GAMEWINDOW_H
