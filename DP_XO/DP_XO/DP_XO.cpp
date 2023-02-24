@@ -1,8 +1,10 @@
-#include <iostream>
+#include "DP_XO.h"
 
-int main()
+DP_XO::DP_XO(QWidget *parent)
+    : QMainWindow(parent)
 {
-
-	return 0;
+    ui.setupUi(this);
 }
 
+DP_XO::~DP_XO()
+{}
