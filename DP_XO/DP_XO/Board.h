@@ -12,6 +12,7 @@ class Board
 public:
 	enum class BoardState {
 		Win,
+		Lose,
 		Draw,
 		Unfinished
 	};
@@ -21,7 +22,7 @@ public:
 	std::array<std::array<Sign, boardSize>, boardSize> GetBoard();
 	std::unordered_set<uint8_t> GetAvailableIndices() const;
 	BoardState CheckGameState();
-	bool setOption(uint32_t option, const Player& player);
+	bool setOption(uint8_t option, const Player& player);
 
 	Sign GetBoardSlotState(int position) const;
 

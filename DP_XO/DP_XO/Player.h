@@ -8,11 +8,12 @@ class Player
 public:
 
 	Player();
-	Player(const std::string& name, Sign signUsed, bool isFirst);
+	Player(const std::string& name, Sign signUsed, bool isFirst, bool isRobot);
 
 	Sign GetSignUsed() const;
 	std::string GetNameUsed() const;
 	bool GetIsFirst() const;
+	bool GetIsRobot() const;
 
 	void SetName(const std::string& name);
 	void SetSignUsed(Sign sign);
@@ -23,6 +24,7 @@ private:
 	std::string m_name;
 	Sign m_signUsed;
 	bool m_isFirst;
+	bool m_isRobot;
 
 
 };

@@ -7,10 +7,11 @@ Player::Player() :
 {
 }
 
-Player::Player(const std::string& name, Sign signUsed = Sign::X, bool isFirst = true) :
+Player::Player(const std::string& name, Sign signUsed = Sign::X, bool isFirst = true, bool isRobot = false) :
 	m_name(name),
 	m_signUsed(signUsed),
-	m_isFirst(isFirst)
+	m_isFirst(isFirst),
+	m_isRobot(isRobot)
 {
 }
 
@@ -27,6 +28,11 @@ std::string Player::GetNameUsed() const
 bool Player::GetIsFirst() const
 {
 	return m_isFirst;
+}
+
+bool Player::GetIsRobot() const
+{
+	return m_isRobot;
 }
 
 void Player::SetName(const std::string& name)

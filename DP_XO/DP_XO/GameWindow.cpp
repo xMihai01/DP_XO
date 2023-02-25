@@ -38,25 +38,36 @@ void GameWindow::slotClicked() {
 
     for (int position = 0; position < boardSlots.size(); position++) {
         if (boardSlots[position] == buttonSender && m_board.GetBoardSlotState(position) == Sign::NONE) {
-            buttonSender->setText("X");
-            m_board.setOption(position, m_player);
+            if (m_board.setOption(position, m_player)) {
+				buttonSender->setText("X");
+				m_turnNumber++;
+                m_lastTurnPlayer = m_player;
+            }
         }
     }
+
+    CheckGameState();
     
-    if (m_board.GetAvailableIndices().size() > 1) {
+    if (m_board.GetAvailableIndices().size() > 1 && m_gameState == Board::BoardState::Unfinished && m_turnNumber % 2 == 1) {
         uint8_t robotOption = SetOptionForRobot();
-        boardSlots[robotOption]->setText("O");
+		boardSlots[robotOption]->setText("O");
+        m_turnNumber++;
+        m_lastTurnPlayer = m_robot;
     }
     
     CheckGameState();
 
-    /*if (m_gameState == GameState::WON) {
-        QMessageBox::warning(this, "WIN", "YOU WON");
-        NewGame();
-        for (int i = 0; i<boardSlots.size(); i++)
-            boardSlots[i]->setText("");
-    }*/
-
+    if (m_gameState == Board::BoardState::Win) 
+    	QMessageBox::warning(this, "WIN", "YOU WON!");
+    else if (m_gameState == Board::BoardState::Lose) 
+    	QMessageBox::warning(this, "LOSE", "YOU LOST!");
+    else if (m_gameState == Board::BoardState::Draw) 
+    	QMessageBox::warning(this, "DRAW", "DRAW!");
+    if (m_gameState != Board::BoardState::Unfinished) {
+		NewGame();
+		for (int i = 0; i<boardSlots.size(); i++)
+			boardSlots[i]->setText("");
+    }
 }
 
 GameWindow::~GameWindow()

@@ -4,30 +4,23 @@
 
 Game::Game(std::string username)
 {
-	m_player = Player(username, Sign::X, true);
-	m_robot = Player("Robot", Sign::O, false);
+	m_player = Player(username, Sign::X, true,false);
+	m_robot = Player("Robot", Sign::O, false,true);
 	m_turnNumber = 0;
-	m_gameState = GameState::RUNNING;
+	m_gameState = Board::BoardState::Unfinished;
 	
 	m_isGameRunning = false;
 }
 
 void Game::NewGame()
 {
-	Sign sign = m_player.GetSignUsed();
-	bool isFirst = m_player.GetIsFirst();
-
-	m_player.SetSignUsed(m_robot.GetSignUsed());
-	m_robot.SetSignUsed(sign);
-
-	m_player.SetIsFirst(m_robot.GetIsFirst());
-	m_robot.SetIsFirst(isFirst);
 
 	m_board.ResetBoard();
 
+	m_lastTurnPlayer = m_player;
 	m_turnNumber = 0;
 
-	m_gameState = GameState::RUNNING;
+	m_gameState = Board::BoardState::Unfinished;
 
 }
 
@@ -35,6 +28,7 @@ void Game::RunGame()
 {
 
 	m_isGameRunning = true;
+	m_lastTurnPlayer = m_player;
 
 	while (m_isGameRunning) {
 
@@ -42,20 +36,22 @@ void Game::RunGame()
 
 			// Make Player choose an option from console or gui
 
+			m_lastTurnPlayer = m_player;
+
 			m_turnNumber++;
 		}
 		else {
 
-			std::unordered_set<uint8_t> availableIndices = m_board.GetAvailableIndices();
-			uint8_t randomIndex = rand() % availableIndices.size();
-			auto it = std::begin(availableIndices);
-			std::advance(it, randomIndex);
-			m_board.setOption(*it, m_robot);
+			uint8_t randomOption = SetOptionForRobot();
+			m_board.setOption(randomOption, m_robot);
+			m_lastTurnPlayer = m_robot;
 
 
 			m_turnNumber++;
 		}
 
+		CheckGameState();
+		//if(m_gameState )
 		// Check if game is finished (someone won the game)
 
 
@@ -69,10 +65,15 @@ void Game::CheckGameState()
 	switch (boardState)
 	{
 	case Board::BoardState::Win:
-		m_gameState = GameState::WON;
+		if (m_lastTurnPlayer.GetIsRobot())
+			m_gameState = Board::BoardState::Lose;
+		else
+			m_gameState = Board::BoardState::Win;
+		m_board.ResetBoard();
 		break;
 	case Board::BoardState::Draw:
-		m_gameState = GameState::DRAW;
+		m_gameState = Board::BoardState::Draw;
+		m_board.ResetBoard();
 		break;
 	case Board::BoardState::Unfinished:
 		break;

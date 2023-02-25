@@ -8,15 +8,6 @@ class Game
 {
 public:
 
-	enum class GameState {
-		RUNNING,
-		WON,
-		LOST,
-		DRAW
-	};
-
-public:
-
 	Game(std::string username);
 
 	void NewGame();
@@ -31,8 +22,9 @@ protected:
 	Board m_board;
 	Player m_player;
 	Player m_robot;
+	Player m_lastTurnPlayer;
 	uint8_t m_turnNumber;
-	GameState m_gameState;
+	Board::BoardState m_gameState;
 
 	bool m_isGameRunning;
 
