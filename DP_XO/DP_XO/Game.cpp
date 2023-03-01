@@ -2,10 +2,9 @@
 #include <algorithm>
 #include <qdebug.h>
 
-Game::Game(std::string username)
+Game::Game(const std::string& username)
 {
-	//m_player = Player(username, Sign::X);
-	//m_robot = Player("Robot", Sign::O);
+
 	m_player = IPlayer::Produce(false, username);
 	m_robot = IPlayer::Produce(true, "");
 	m_turnNumber = 0;
@@ -26,36 +25,24 @@ void Game::NewGame()
 
 }
 
-void Game::RunGame()
+void Game::StartRound(uint8_t position)
 {
 
-	m_isGameRunning = true;
-	m_isPlayerLast = true;
-
-	while (m_isGameRunning) {
-
-		if (m_turnNumber %2 == 0) {
-
-			// Make Player choose an option from console or gui
-
-		}
-		else {
-
-			uint8_t randomOption = SetOptionForRobot();
-			m_board.setOption(randomOption, m_robot);
-		
-		}
-
-		m_isPlayerLast = !m_isPlayerLast;
-
+	if (m_board.setOption(position, m_player)) {
 		m_turnNumber++;
-
-		CheckGameState();
-		//if(m_gameState )
-		// Check if game is finished (someone won the game)
-
-
+		m_isPlayerLast = !m_isPlayerLast;
 	}
+
+	CheckGameState();
+
+	if (m_board.GetAvailableIndices().size() > 1 && m_gameState == Board::BoardState::Unfinished && m_turnNumber % 2 == 1) {
+		uint8_t robotOption = SetOptionForRobot();
+		m_turnNumber++;
+		m_isPlayerLast = !m_isPlayerLast;
+	}
+
+	CheckGameState();
+
 }
 
 Board& Game::GetBoard()
@@ -78,7 +65,7 @@ void Game::IncrementTurnNumber()
 	m_turnNumber++;
 }
 
-void Game::SetLastTurnPlayer(const Player& player)
+void Game::SetLastTurnPlayer(const IPlayerPtr& player)
 {
 	m_isPlayerLast = !m_isPlayerLast;
 }

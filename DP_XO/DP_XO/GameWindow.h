@@ -18,6 +18,11 @@ public:
     explicit GameWindow(QString username, QWidget *parent = nullptr);
     ~GameWindow();
 
+private:
+
+    void UpdateBoard();
+    void ShowGameState();
+
 private slots:
 
     void slotClicked();
@@ -25,7 +30,7 @@ private slots:
 private:
     Ui::GameWindow *ui;
 
-    std::vector<QPushButton*> boardSlots;
+    QMap<QPushButton*, uint8_t> boardSlots;
     IGamePtr game;
 };
 

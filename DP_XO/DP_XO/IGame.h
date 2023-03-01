@@ -9,7 +9,7 @@ class IGame {
 public:
 
 	virtual void NewGame() = 0;
-	virtual void RunGame() = 0;
+	virtual void StartRound(uint8_t position) = 0;
 
 	
 	virtual void CheckGameState() = 0;

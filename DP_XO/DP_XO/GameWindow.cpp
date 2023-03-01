@@ -18,15 +18,16 @@ GameWindow::GameWindow(QString username, QWidget *parent) :
     connect(ui->slot8, SIGNAL(clicked()), SLOT(slotClicked()));
     connect(ui->slot9, SIGNAL(clicked()), SLOT(slotClicked()));
 
-    boardSlots.push_back(ui->slot1);
-    boardSlots.push_back(ui->slot2);
-    boardSlots.push_back(ui->slot3);
-    boardSlots.push_back(ui->slot4);
-    boardSlots.push_back(ui->slot5);
-    boardSlots.push_back(ui->slot6);
-    boardSlots.push_back(ui->slot7);
-    boardSlots.push_back(ui->slot8);
-    boardSlots.push_back(ui->slot9);
+    boardSlots.insert(ui->slot1, 0);
+    boardSlots.insert(ui->slot2, 1);
+    boardSlots.insert(ui->slot3, 2);
+    boardSlots.insert(ui->slot4, 3);
+    boardSlots.insert(ui->slot5, 4);
+    boardSlots.insert(ui->slot6, 5);
+    boardSlots.insert(ui->slot7, 6);
+    boardSlots.insert(ui->slot8, 7);
+    boardSlots.insert(ui->slot9, 8);
+
     game = IGame::Produce();
 
 }
@@ -35,38 +36,48 @@ void GameWindow::slotClicked() {
     
     QPushButton* buttonSender = qobject_cast<QPushButton*>(sender());
 
-    for (int position = 0; position < boardSlots.size(); position++) {
-        if (boardSlots[position] == buttonSender && game->GetBoard().GetBoardSlotState(position) == Sign::NONE) {
-            if (game->GetBoard().setOption(position, game->GetPlayer())) {
-				buttonSender->setText("X");
-                game->IncrementTurnNumber();
-                game->SetLastTurnPlayer(game->GetPlayer());
+    game->StartRound(boardSlots[buttonSender]);
+
+    UpdateBoard();
+    ShowGameState();
+
+}
+
+void GameWindow::UpdateBoard() {
+
+    auto board = game->GetBoard().GetBoard();
+    
+    for (size_t index = 0; index < Board::boardSize * Board::boardSize; index++) {
+        for (auto slot : boardSlots.toStdMap()) {
+
+            if (slot.second == index) {
+                if (board[index / 3][index % 3] == Sign::X)
+                    slot.first->setText("X");
+                else if (board[index / 3][index % 3] == Sign::O)
+                    slot.first->setText("O");
+
             }
         }
     }
 
-    game->CheckGameState();
-    
-    if (game->GetBoard().GetAvailableIndices().size() > 1 && game->GetGameState() == Board::BoardState::Unfinished && game->GetTurnNumber() % 2 == 1) {
-        uint8_t robotOption = game->SetOptionForRobot();
-		boardSlots[robotOption]->setText("O");
-        game->IncrementTurnNumber();
-        game->SetLastTurnPlayer(game->GetRobot());
-    }
-    
-    game->CheckGameState();
+}
 
-    if (game->GetGameState() == Board::BoardState::Win)
-    	QMessageBox::warning(this, "WIN", "YOU WON!");
-    else if (game->GetGameState() == Board::BoardState::Lose) 
-    	QMessageBox::warning(this, "LOSE", "YOU LOST!");
-    else if (game->GetGameState() == Board::BoardState::Draw) 
-    	QMessageBox::warning(this, "DRAW", "DRAW!");
-    if (game->GetGameState() != Board::BoardState::Unfinished) {
-		game->NewGame();
-		for (int i = 0; i<boardSlots.size(); i++)
-			boardSlots[i]->setText("");
+void GameWindow::ShowGameState() {
+
+    auto state = game->GetGameState();
+
+    if (state == Board::BoardState::Win)
+        QMessageBox::warning(this, "WIN", "YOU WON!");
+    else if (state == Board::BoardState::Lose)
+        QMessageBox::warning(this, "LOSE", "YOU LOST!");
+    else if (state == Board::BoardState::Draw)
+        QMessageBox::warning(this, "DRAW", "DRAW!");
+    if (state != Board::BoardState::Unfinished) {
+        game->NewGame();
+        for (auto slot : boardSlots.toStdMap())
+            slot.first->setText("");
     }
+
 }
 
 GameWindow::~GameWindow()
