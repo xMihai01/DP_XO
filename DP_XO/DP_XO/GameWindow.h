@@ -2,7 +2,7 @@
 #define GAMEWINDOW_H
 
 #include <QWidget>
-#include "Game.h"
+#include "IGame.h"
 #include <vector>
 #include <QPushButton>
 
@@ -10,7 +10,7 @@ namespace Ui {
 class GameWindow;
 }
 
-class GameWindow : public QWidget, public Game
+class GameWindow : public QWidget
 {
     Q_OBJECT
 
@@ -26,7 +26,7 @@ private:
     Ui::GameWindow *ui;
 
     std::vector<QPushButton*> boardSlots;
-    //Game game;
+    IGamePtr game;
 };
 
 #endif // GAMEWINDOW_H

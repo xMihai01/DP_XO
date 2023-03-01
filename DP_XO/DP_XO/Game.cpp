@@ -58,6 +58,45 @@ void Game::RunGame()
 	}
 }
 
+Board& Game::GetBoard()
+{
+	return m_board;
+}
+
+Player Game::GetPlayer()
+{
+	return m_player;
+}
+
+uint8_t Game::GetTurnNumber()
+{
+	return m_turnNumber;
+}
+
+void Game::IncrementTurnNumber()
+{
+	m_turnNumber++;
+}
+
+void Game::SetLastTurnPlayer(const Player& player)
+{
+	m_lastTurnPlayer = player;
+}
+
+Board::BoardState Game::GetGameState()
+{
+	return m_gameState;
+}
+
+Player Game::GetRobot()
+{
+	return m_robot;
+}
+
+IGamePtr IGame::Produce() {
+	return std::make_shared<Game>();
+}
+
 void Game::CheckGameState()
 {
 	Board::BoardState boardState = m_board.CheckGameState();

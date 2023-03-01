@@ -1,21 +1,31 @@
 #pragma once
+#include "IGame.h"
 
-#include "Player.h"
-#include "Sign.h"
-#include "Board.h"
 
-class Game
+class Game : public IGame
 {
 public:
 
+	Game() = default;
 	Game(std::string username);
 
-	void NewGame();
-	void RunGame();
+	void NewGame() override;
+	void RunGame() override;
 
+	Board& GetBoard() override;
+	Player GetPlayer() override;
+	uint8_t GetTurnNumber() override;
+	void IncrementTurnNumber() override;
+	void SetLastTurnPlayer(const Player& player);
+	Board::BoardState GetGameState() override;
+	Player GetRobot() override;
 	
-	void CheckGameState();
-	uint8_t SetOptionForRobot();
+	void CheckGameState() override;
+	uint8_t SetOptionForRobot() override;
+
+	~Game() = default;
+
+
 
 protected:
 

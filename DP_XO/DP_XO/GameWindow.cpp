@@ -4,9 +4,7 @@
 
 GameWindow::GameWindow(QString username, QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::GameWindow),
-    Game(username.toStdString())
-   // game(username.toStdString())
+    ui(new Ui::GameWindow)
 {
     ui->setupUi(this);
     
@@ -29,6 +27,7 @@ GameWindow::GameWindow(QString username, QWidget *parent) :
     boardSlots.push_back(ui->slot7);
     boardSlots.push_back(ui->slot8);
     boardSlots.push_back(ui->slot9);
+    game = IGame::Produce();
 
 }
 
@@ -37,34 +36,34 @@ void GameWindow::slotClicked() {
     QPushButton* buttonSender = qobject_cast<QPushButton*>(sender());
 
     for (int position = 0; position < boardSlots.size(); position++) {
-        if (boardSlots[position] == buttonSender && m_board.GetBoardSlotState(position) == Sign::NONE) {
-            if (m_board.setOption(position, m_player)) {
+        if (boardSlots[position] == buttonSender && game->GetBoard().GetBoardSlotState(position) == Sign::NONE) {
+            if (game->GetBoard().setOption(position, game->GetPlayer())) {
 				buttonSender->setText("X");
-				m_turnNumber++;
-                m_lastTurnPlayer = m_player;
+                game->IncrementTurnNumber();
+                game->SetLastTurnPlayer(game->GetPlayer());
             }
         }
     }
 
-    CheckGameState();
+    game->CheckGameState();
     
-    if (m_board.GetAvailableIndices().size() > 1 && m_gameState == Board::BoardState::Unfinished && m_turnNumber % 2 == 1) {
-        uint8_t robotOption = SetOptionForRobot();
+    if (game->GetBoard().GetAvailableIndices().size() > 1 && game->GetGameState() == Board::BoardState::Unfinished && game->GetTurnNumber() % 2 == 1) {
+        uint8_t robotOption = game->SetOptionForRobot();
 		boardSlots[robotOption]->setText("O");
-        m_turnNumber++;
-        m_lastTurnPlayer = m_robot;
+        game->IncrementTurnNumber();
+        game->SetLastTurnPlayer(game->GetRobot());
     }
     
-    CheckGameState();
+    game->CheckGameState();
 
-    if (m_gameState == Board::BoardState::Win) 
+    if (game->GetGameState() == Board::BoardState::Win)
     	QMessageBox::warning(this, "WIN", "YOU WON!");
-    else if (m_gameState == Board::BoardState::Lose) 
+    else if (game->GetGameState() == Board::BoardState::Lose) 
     	QMessageBox::warning(this, "LOSE", "YOU LOST!");
-    else if (m_gameState == Board::BoardState::Draw) 
+    else if (game->GetGameState() == Board::BoardState::Draw) 
     	QMessageBox::warning(this, "DRAW", "DRAW!");
-    if (m_gameState != Board::BoardState::Unfinished) {
-		NewGame();
+    if (game->GetGameState() != Board::BoardState::Unfinished) {
+		game->NewGame();
 		for (int i = 0; i<boardSlots.size(); i++)
 			boardSlots[i]->setText("");
     }
