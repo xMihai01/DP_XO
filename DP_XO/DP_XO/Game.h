@@ -13,12 +13,12 @@ public:
 	void RunGame() override;
 
 	Board& GetBoard() override;
-	Player GetPlayer() override;
+	IPlayerPtr GetPlayer() override;
 	uint8_t GetTurnNumber() override;
 	void IncrementTurnNumber() override;
 	void SetLastTurnPlayer(const Player& player);
 	Board::BoardState GetGameState() override;
-	Player GetRobot() override;
+	IPlayerPtr GetRobot() override;
 	
 	void CheckGameState() override;
 	uint8_t SetOptionForRobot() override;
@@ -30,10 +30,12 @@ public:
 protected:
 
 	Board m_board;
-	Player m_player;
-	Player m_robot;
-	Player m_lastTurnPlayer;
+	IPlayerPtr m_player;
+	IPlayerPtr m_robot;
+	bool m_isPlayerLast;
+
 	uint8_t m_turnNumber;
+
 	Board::BoardState m_gameState;
 
 	bool m_isGameRunning;

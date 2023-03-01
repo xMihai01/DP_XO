@@ -91,7 +91,9 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="IPlayer.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Robot.cpp" />
     <QtRcc Include="DP_XO.qrc" />
     <QtUic Include="DP_XO.ui" />
     <QtMoc Include="DP_XO.h" />
@@ -104,7 +106,9 @@
     <ClInclude Include="Game.h" />
     <QtMoc Include="GameWindow.h" />
     <ClInclude Include="IGame.h" />
+    <ClInclude Include="IPlayer.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Robot.h" />
     <ClInclude Include="Sign.h" />
   </ItemGroup>
   <ItemGroup>

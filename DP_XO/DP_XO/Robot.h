@@ -1,14 +1,10 @@
 #pragma once
-
 #include "IPlayer.h"
 
-class Player : public IPlayer
+class Robot : public IPlayer
 {
 
-public:
-
-	Player();
-	Player(const std::string& name, Sign signUsed);
+	Robot();
 
 	Sign GetSignUsed() const override;
 	std::string GetNameUsed() const override;

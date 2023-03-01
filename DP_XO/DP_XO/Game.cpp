@@ -4,8 +4,10 @@
 
 Game::Game(std::string username)
 {
-	m_player = Player(username, Sign::X, true,false);
-	m_robot = Player("Robot", Sign::O, false,true);
+	//m_player = Player(username, Sign::X);
+	//m_robot = Player("Robot", Sign::O);
+	m_player = IPlayer::Produce(false, username);
+	m_robot = IPlayer::Produce(true, "");
 	m_turnNumber = 0;
 	m_gameState = Board::BoardState::Unfinished;
 	
@@ -17,7 +19,7 @@ void Game::NewGame()
 
 	m_board.ResetBoard();
 
-	m_lastTurnPlayer = m_player;
+	m_isPlayerLast = true;
 	m_turnNumber = 0;
 
 	m_gameState = Board::BoardState::Unfinished;
@@ -28,7 +30,7 @@ void Game::RunGame()
 {
 
 	m_isGameRunning = true;
-	m_lastTurnPlayer = m_player;
+	m_isPlayerLast = true;
 
 	while (m_isGameRunning) {
 
@@ -36,19 +38,17 @@ void Game::RunGame()
 
 			// Make Player choose an option from console or gui
 
-			m_lastTurnPlayer = m_player;
-
-			m_turnNumber++;
 		}
 		else {
 
 			uint8_t randomOption = SetOptionForRobot();
 			m_board.setOption(randomOption, m_robot);
-			m_lastTurnPlayer = m_robot;
-
-
-			m_turnNumber++;
+		
 		}
+
+		m_isPlayerLast = !m_isPlayerLast;
+
+		m_turnNumber++;
 
 		CheckGameState();
 		//if(m_gameState )
@@ -63,7 +63,7 @@ Board& Game::GetBoard()
 	return m_board;
 }
 
-Player Game::GetPlayer()
+IPlayerPtr Game::GetPlayer()
 {
 	return m_player;
 }
@@ -80,7 +80,7 @@ void Game::IncrementTurnNumber()
 
 void Game::SetLastTurnPlayer(const Player& player)
 {
-	m_lastTurnPlayer = player;
+	m_isPlayerLast = !m_isPlayerLast;
 }
 
 Board::BoardState Game::GetGameState()
@@ -88,7 +88,7 @@ Board::BoardState Game::GetGameState()
 	return m_gameState;
 }
 
-Player Game::GetRobot()
+IPlayerPtr Game::GetRobot()
 {
 	return m_robot;
 }
@@ -104,7 +104,7 @@ void Game::CheckGameState()
 	switch (boardState)
 	{
 	case Board::BoardState::Win:
-		if (m_lastTurnPlayer.GetIsRobot())
+		if (!m_isPlayerLast)
 			m_gameState = Board::BoardState::Lose;
 		else
 			m_gameState = Board::BoardState::Win;

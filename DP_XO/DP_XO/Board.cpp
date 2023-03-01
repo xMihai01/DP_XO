@@ -17,14 +17,14 @@ std::array<std::array<Sign,boardSize >,boardSize > Board::GetBoard()
 	return m_board;
 }
 
-bool Board::setOption(uint8_t option, const Player& player)
+bool Board::setOption(uint8_t option, IPlayerPtr player)
 {
     
 	if (option > 8)return false;
 	if (m_board[option / boardSize][option % boardSize] == Sign::NONE) {
-		m_board[option / boardSize][option % boardSize] = player.GetSignUsed();
+		m_board[option / boardSize][option % boardSize] = player->GetSignUsed();
         //DEBUG:
-        switch (player.GetSignUsed()) {
+        switch (player->GetSignUsed()) {
         case Sign::X:
             qDebug() << "X";
             break;
@@ -35,6 +35,7 @@ bool Board::setOption(uint8_t option, const Player& player)
 		m_availableIndices.erase(option);
 		return true;
 	}
+    
 
 	return false;
 }

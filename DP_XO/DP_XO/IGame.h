@@ -1,7 +1,6 @@
 #pragma once
 
-#include "Player.h"
-#include "Sign.h"
+#include "IPlayer.h"
 #include "Board.h"
 
 using IGamePtr = std::shared_ptr<class IGame>;
@@ -17,12 +16,12 @@ public:
 	virtual uint8_t SetOptionForRobot() = 0;
 
 	virtual Board& GetBoard() = 0;
-	virtual Player GetPlayer() = 0;
+	virtual IPlayerPtr GetPlayer() = 0;
 	virtual uint8_t GetTurnNumber() = 0;
 	virtual void IncrementTurnNumber() = 0;
-	virtual void SetLastTurnPlayer(const Player&) = 0;
+	virtual void SetLastTurnPlayer(const IPlayerPtr&) = 0;
 	virtual Board::BoardState GetGameState() = 0;
-	virtual Player GetRobot() = 0;
+	virtual IPlayerPtr GetRobot() = 0;
 	
 	virtual ~IGame() = default;
 
