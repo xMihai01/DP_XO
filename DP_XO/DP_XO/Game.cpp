@@ -61,16 +61,6 @@ uint8_t Game::GetTurnNumber()
 	return m_turnNumber;
 }
 
-void Game::IncrementTurnNumber()
-{
-	m_turnNumber++;
-}
-
-void Game::SetLastTurnPlayer(const IPlayerPtr& player)
-{
-	m_isPlayerLast = !m_isPlayerLast;
-}
-
 Board::BoardState Game::GetGameState()
 {
 	return m_gameState;
@@ -96,11 +86,9 @@ void Game::CheckGameState()
 			m_gameState = Board::BoardState::Lose;
 		else
 			m_gameState = Board::BoardState::Win;
-		m_board.ResetBoard();
 		break;
 	case Board::BoardState::Draw:
 		m_gameState = Board::BoardState::Draw;
-		m_board.ResetBoard();
 		break;
 	case Board::BoardState::Unfinished:
 		break;

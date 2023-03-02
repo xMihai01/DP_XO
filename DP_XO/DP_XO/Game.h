@@ -15,15 +15,14 @@ public:
 	Board GetBoard() override;
 	IPlayerPtr GetPlayer() override;
 	uint8_t GetTurnNumber() override;
-	void IncrementTurnNumber() override;
-	void SetLastTurnPlayer(const IPlayerPtr& player);
 	Board::BoardState GetGameState() override;
 	IPlayerPtr GetRobot() override;
 	
+	~Game() = default;
+private:
 	void CheckGameState() override;
 	uint8_t SetOptionForRobot() override;
 
-	~Game() = default;
 
 
 
