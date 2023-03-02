@@ -25,3 +25,8 @@ void Robot::SetSignUsed(Sign sign)
 {
 	m_signUsed = sign;
 }
+
+//IPlayerPtr Robot::Produce()
+//{
+//	return std::make_shared<Robot>();
+//}

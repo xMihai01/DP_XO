@@ -1,8 +1,5 @@
 #include "Board.h"
-#include "Sign.h"
-#include "Qdebug"
 
-#include <qmainwindow.h>
 Board::Board()
 {
 	for (size_t i = 0; i < boardSize; ++i)
@@ -23,15 +20,7 @@ bool Board::setOption(uint8_t option, IPlayerPtr player)
 	if (option > 8)return false;
 	if (m_board[option / boardSize][option % boardSize] == Sign::NONE) {
 		m_board[option / boardSize][option % boardSize] = player->GetSignUsed();
-        //DEBUG:
-        switch (player->GetSignUsed()) {
-        case Sign::X:
-            qDebug() << "X";
-            break;
-        case Sign::O:
-            qDebug() << "O";
-            break;
-        }
+
 		m_availableIndices.erase(option);
 		return true;
 	}

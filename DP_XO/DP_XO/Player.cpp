@@ -31,3 +31,8 @@ void Player::SetSignUsed(Sign sign)
 {
 	m_signUsed = sign;
 }
+
+//IPlayerPtr Player::Produce()
+//{
+//	return std::make_shared<Player>();
+//}

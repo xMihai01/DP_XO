@@ -15,7 +15,7 @@ public:
 	virtual void CheckGameState() = 0;
 	virtual uint8_t SetOptionForRobot() = 0;
 
-	virtual Board& GetBoard() = 0;
+	virtual Board GetBoard() = 0;
 	virtual IPlayerPtr GetPlayer() = 0;
 	virtual uint8_t GetTurnNumber() = 0;
 	virtual void IncrementTurnNumber() = 0;

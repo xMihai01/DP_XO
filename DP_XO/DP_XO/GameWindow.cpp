@@ -39,6 +39,7 @@ void GameWindow::slotClicked() {
     game->StartRound(boardSlots[buttonSender]);
 
     UpdateBoard();
+
     ShowGameState();
 
 }
@@ -47,7 +48,7 @@ void GameWindow::UpdateBoard() {
 
     auto board = game->GetBoard().GetBoard();
     
-    for (size_t index = 0; index < Board::boardSize * Board::boardSize; index++) {
+    for (size_t index = 0; index < boardSize * boardSize; index++) {
         for (auto slot : boardSlots.toStdMap()) {
 
             if (slot.second == index) {

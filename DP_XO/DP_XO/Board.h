@@ -4,10 +4,11 @@
 #include "IPlayer.h"
 #include <unordered_set>
 
+#define boardSize 3
+
 class Board
 {
 public:
-	static const uint8_t boardSize = 3;
 
 	enum class BoardState {
 		Win,

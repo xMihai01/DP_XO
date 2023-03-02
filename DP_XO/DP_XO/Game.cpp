@@ -11,6 +11,7 @@ Game::Game(const std::string& username)
 	m_gameState = Board::BoardState::Unfinished;
 	
 	m_isGameRunning = false;
+	m_isPlayerLast = false;
 }
 
 void Game::NewGame()
@@ -18,7 +19,7 @@ void Game::NewGame()
 
 	m_board.ResetBoard();
 
-	m_isPlayerLast = true;
+	m_isPlayerLast = false;
 	m_turnNumber = 0;
 
 	m_gameState = Board::BoardState::Unfinished;
@@ -32,7 +33,7 @@ void Game::StartRound(uint8_t position)
 		m_turnNumber++;
 		m_isPlayerLast = !m_isPlayerLast;
 	}
-
+	
 	CheckGameState();
 
 	if (m_board.GetAvailableIndices().size() > 1 && m_gameState == Board::BoardState::Unfinished && m_turnNumber % 2 == 1) {
@@ -45,7 +46,7 @@ void Game::StartRound(uint8_t position)
 
 }
 
-Board& Game::GetBoard()
+Board Game::GetBoard()
 {
 	return m_board;
 }
@@ -81,7 +82,7 @@ IPlayerPtr Game::GetRobot()
 }
 
 IGamePtr IGame::Produce() {
-	return std::make_shared<Game>();
+	return std::make_shared<Game>("user");
 }
 
 void Game::CheckGameState()

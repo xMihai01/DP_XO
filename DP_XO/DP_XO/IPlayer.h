@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <memory>
-
 #include "Sign.h"
 
 using IPlayerPtr = std::shared_ptr<class IPlayer>;

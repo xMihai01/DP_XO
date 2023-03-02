@@ -12,7 +12,7 @@ public:
 	void NewGame() override;
 	void StartRound(uint8_t position) override;
 
-	Board& GetBoard() override;
+	Board GetBoard() override;
 	IPlayerPtr GetPlayer() override;
 	uint8_t GetTurnNumber() override;
 	void IncrementTurnNumber() override;

@@ -4,6 +4,8 @@
 class Robot : public IPlayer
 {
 
+public:
+
 	Robot();
 
 	Sign GetSignUsed() const override;
@@ -11,6 +13,8 @@ class Robot : public IPlayer
 
 	void SetName(const std::string& name) override;
 	void SetSignUsed(Sign sign) override;
+
+	//static IPlayerPtr Produce();
 
 private:
 
