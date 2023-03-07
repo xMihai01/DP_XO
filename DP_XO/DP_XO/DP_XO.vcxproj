@@ -60,8 +60,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>GameLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\GameLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -88,12 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWindow.cpp" />
-    <ClCompile Include="IPlayer.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Robot.cpp" />
     <QtRcc Include="DP_XO.qrc" />
     <QtUic Include="DP_XO.ui" />
     <QtMoc Include="DP_XO.h" />
@@ -102,14 +101,7 @@
     <QtUic Include="GameWindow.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="Game.h" />
     <QtMoc Include="GameWindow.h" />
-    <ClInclude Include="IGame.h" />
-    <ClInclude Include="IPlayer.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Robot.h" />
-    <ClInclude Include="Sign.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

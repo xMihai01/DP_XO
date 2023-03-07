@@ -1,6 +1,5 @@
 #include "Game.h"
 #include <algorithm>
-#include <qdebug.h>
 
 Game::Game(const std::string& username)
 {
