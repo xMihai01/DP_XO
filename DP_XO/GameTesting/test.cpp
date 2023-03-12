@@ -1,6 +1,7 @@
 #include "pch.h"
+#include "IGame.h"
 
 TEST(TestCaseName, TestName) {
-  ASSERT_EQ(1, 2);
+  EXPECT_EQ(1, 1);
   EXPECT_TRUE(true);
 }

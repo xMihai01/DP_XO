@@ -28,7 +28,6 @@ public:
 	virtual ~IGame() = default;
 
 	static IGamePtr Produce();
-private:
 	virtual void CheckGameState() = 0;
 	virtual uint8_t SetOptionForRobot() = 0;
 

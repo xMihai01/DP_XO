@@ -24,7 +24,6 @@ public:
 	void NotifyAllListeners() override;
 
 	~Game() = default;
-private:
 	void CheckGameState() override;
 	uint8_t SetOptionForRobot() override;
 
