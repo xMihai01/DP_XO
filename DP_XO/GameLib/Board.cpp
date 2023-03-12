@@ -25,7 +25,6 @@ bool Board::setOption(uint8_t option, IPlayerPtr player)
 		return true;
 	}
     
-
 	return false;
 }
 

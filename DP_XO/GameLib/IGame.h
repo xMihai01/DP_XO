@@ -2,6 +2,7 @@
 
 #include "IPlayer.h"
 #include "Board.h"
+#include "IGameListener.h"
 
 using IGamePtr = std::shared_ptr<class IGame>;
 
@@ -19,6 +20,11 @@ public:
 	virtual Board::BoardState GetGameState() = 0;
 	virtual IPlayerPtr GetRobot() = 0;
 	
+	virtual void AddListener(IGameListenerPtr listener) = 0;
+	virtual void RemoveListener(IGameListenerPtr listener) = 0;
+
+	virtual void NotifyAllListeners() = 0;
+
 	virtual ~IGame() = default;
 
 	static IGamePtr Produce();

@@ -93,6 +93,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="QtListener.cpp" />
     <QtRcc Include="DP_XO.qrc" />
     <QtUic Include="DP_XO.ui" />
     <QtMoc Include="DP_XO.h" />
@@ -111,6 +112,9 @@
     <ProjectReference Include="..\UnitTesting\UnitTesting.vcxproj">
       <Project>{1294db38-ee4b-4362-82b4-a6fba2474ee4}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="QtListener.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

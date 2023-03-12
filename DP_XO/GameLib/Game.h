@@ -18,6 +18,11 @@ public:
 	Board::BoardState GetGameState() override;
 	IPlayerPtr GetRobot() override;
 	
+	void AddListener(IGameListenerPtr listener) override;
+	void RemoveListener(IGameListenerPtr listener) override;
+
+	void NotifyAllListeners() override;
+
 	~Game() = default;
 private:
 	void CheckGameState() override;
@@ -38,6 +43,8 @@ protected:
 	Board::BoardState m_gameState;
 
 	bool m_isGameRunning;
+
+	std::vector<IGameListenerPtr> m_listeners;
 
 };
 

@@ -5,6 +5,7 @@
 #include "IGame.h"
 #include <vector>
 #include <QPushButton>
+#include "QtListener.h"
 
 namespace Ui {
 class GameWindow;
@@ -18,11 +19,6 @@ public:
     explicit GameWindow(QString username, QWidget *parent = nullptr);
     ~GameWindow();
 
-private:
-
-    void UpdateBoard();
-    void ShowGameState();
-
 private slots:
 
     void slotClicked();
@@ -32,6 +28,7 @@ private:
 
     QMap<QPushButton*, uint8_t> boardSlots;
     IGamePtr game;
+    IGameListenerPtr qtListener;
 };
 
 #endif // GAMEWINDOW_H

@@ -43,6 +43,8 @@ void Game::StartRound(uint8_t position)
 
 	CheckGameState();
 
+	NotifyAllListeners();
+
 }
 
 Board Game::GetBoard()
@@ -107,3 +109,27 @@ uint8_t Game::SetOptionForRobot()
 	return *it;
 }
 
+
+void Game::AddListener(IGameListenerPtr listener)
+{
+	m_listeners.push_back(listener);
+}
+
+void Game::RemoveListener(IGameListenerPtr listener)
+{
+	for (auto it = m_listeners.begin(); it != m_listeners.end(); )
+	{
+		if (*it == listener)
+			it = m_listeners.erase(it);
+		else
+			++it;
+	}
+}
+
+void Game::NotifyAllListeners()
+{
+	for (auto obs : m_listeners) {
+		obs->Update();
+		obs->ShowGameState();
+	}
+}

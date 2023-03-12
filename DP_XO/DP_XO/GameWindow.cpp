@@ -28,7 +28,11 @@ GameWindow::GameWindow(QString username, QWidget *parent) :
     boardSlots.insert(ui->slot8, 7);
     boardSlots.insert(ui->slot9, 8);
 
+
     game = IGame::Produce();
+    qtListener = std::make_shared<QtListener>(game, boardSlots, ui->gameState_label);
+    
+    game->AddListener(qtListener);
 
 }
 
@@ -38,50 +42,10 @@ void GameWindow::slotClicked() {
 
     game->StartRound(boardSlots[buttonSender]);
 
-    UpdateBoard();
-
-    ShowGameState();
-
-}
-
-void GameWindow::UpdateBoard() {
-
-    auto board = game->GetBoard().GetBoard();
-    
-    for (size_t index = 0; index < boardSize * boardSize; index++) {
-        for (auto slot : boardSlots.toStdMap()) {
-
-            if (slot.second == index) {
-                if (board[index / 3][index % 3] == Sign::X)
-                    slot.first->setText("X");
-                else if (board[index / 3][index % 3] == Sign::O)
-                    slot.first->setText("O");
-
-            }
-        }
-    }
-
-}
-
-void GameWindow::ShowGameState() {
-
-    auto state = game->GetGameState();
-
-    if (state == Board::BoardState::Win)
-        QMessageBox::warning(this, "WIN", "YOU WON!");
-    else if (state == Board::BoardState::Lose)
-        QMessageBox::warning(this, "LOSE", "YOU LOST!");
-    else if (state == Board::BoardState::Draw)
-        QMessageBox::warning(this, "DRAW", "DRAW!");
-    if (state != Board::BoardState::Unfinished) {
-        game->NewGame();
-        for (auto slot : boardSlots.toStdMap())
-            slot.first->setText("");
-    }
 
 }
 
 GameWindow::~GameWindow()
 {
-   
+    game->RemoveListener(qtListener);
 }
