@@ -33,7 +33,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Winblows\Desktop\DP_XO\DP_XO\GameLib;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\GameLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

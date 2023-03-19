@@ -17,6 +17,16 @@ std::array<std::array<Sign,boardSize >,boardSize > Board::GetBoard()
 bool Board::setOption(uint8_t option, IPlayerPtr player)
 {
     
+    /*
+    The function tries to set a sign on a board at a specified location for a given player
+    The parameter option represents the location where the sign will be placed on the board.
+    The location on the board is defined as [option/boardSize][option%boardSize]
+    If the option is lower or equal to 8 and the current location is empty (Sign::NONE),
+    then the given player's sign is placed at that location. After that, the option is erased from the availableIndices set.
+
+    If the function returns false, then the location where the game is trying to place a sign is not available.
+    */
+
 	if (option > 8)return false;
 	if (m_board[option / boardSize][option % boardSize] == Sign::NONE) {
 		m_board[option / boardSize][option % boardSize] = player->GetSignUsed();
@@ -106,6 +116,12 @@ Board::BoardState Board::CheckGameState()
 
 void Board::ResetBoard()
 {
+
+    /*
+    Sets every element of the board to Sign::None (meaning that the location at the current element is available)
+    and deletes every element of the m_availableIndices set and inserts back every number from 0, to boardSize^2 - 1
+    */
+
 	for (size_t i = 0; i < boardSize; ++i)
 		for (size_t j = 0; j < boardSize; ++j)
 			m_board[i][j] = Sign::NONE;
