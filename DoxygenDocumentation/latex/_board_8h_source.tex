@@ -1,0 +1,51 @@
+\hypertarget{_board_8h_source}{}\doxysection{Board.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}IPlayer.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ boardSize\ 3}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_board}{Board}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{BoardState}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a119eac47719cc9be7b99124712e229da}{Win}},\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a02cf70d59ed69d7c9dd21d30e490e050}{Lose}},\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a2d03c2d5a7ec65ef4619e0582c272ec2}{Draw}},\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a14a07803db889bd3a8f8d182ff61975c}{Unfinished}}\ }
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a7a0a7a03e33b1ccb652d9c2b55afe71b}{ResetBoard}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::array<std::array<Sign,\ boardSize>,\ boardSize>\ \mbox{\hyperlink{class_board_a7749f1333344d4c61f973111822e3dfc}{GetBoard}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::unordered\_set<uint8\_t>\ \mbox{\hyperlink{class_board_a418b146664ba045bef68ee38f34bf6c8}{GetAvailableIndices}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{BoardState}}\ \mbox{\hyperlink{class_board_add6700c05f0a1d7c845ba51e042c8580}{CheckGameState}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_board_af0e803fa17633662d5982024394b6c75}{setOption}}(uint8\_t\ option,\ IPlayerPtr\ player);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ Sign\ \mbox{\hyperlink{class_board_a0f8c2867e9004f51551db432b695558f}{GetBoardSlotState}}(\textcolor{keywordtype}{int}\ position)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ std::array<std::array<Sign,boardSize>,boardSize>\ m\_board;\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::unordered\_set<uint8\_t>\ m\_availableIndices;\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+
+\end{DoxyCode}

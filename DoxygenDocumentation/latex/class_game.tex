@@ -1,0 +1,310 @@
+\hypertarget{class_game}{}\doxysection{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+Inheritance diagram for Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_a48516f780e94549977881e8b0c23b057}\label{class_game_a48516f780e94549977881e8b0c23b057}} 
+{\bfseries Game} (const std\+::string \&username)
+\item 
+void \mbox{\hyperlink{class_game_a14336a0f72290d09393d50d9f6a00c07}{New\+Game}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_accb2146c66bb668e27cca0715482609d}{Start\+Round}} (uint8\+\_\+t position) override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{class_game_a7d3253a005fae04a4f3257c4aaf3e6f4}{Get\+Board}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+IPlayer\+Ptr \mbox{\hyperlink{class_game_ae1a55e45e44b048d5b53dcb76e2a5cb3}{Get\+Player}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_game_ab59d84506a7e47f92657c65a3427b5e2}{Get\+Turn\+Number}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+::\+Board\+State}} \mbox{\hyperlink{class_game_a58c53c2813da72c3ce384f45f3b84cfe}{Get\+Game\+State}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+IPlayer\+Ptr \mbox{\hyperlink{class_game_a3f6222642e08bdaaf0fda51a35d672c7}{Get\+Robot}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ab0013dcfed84705ce37b47daeaa56a5f}{Add\+Listener}} (IGame\+Listener\+Ptr listener) override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ac8204fff3ed8fca305378e63a5d5c8a6}{Remove\+Listener}} (IGame\+Listener\+Ptr listener) override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ae3e3475f32f34fbef21d79dbbe363f5d}{Notify\+All\+Listeners}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a484b47a61b10ff74ce037a632a3c1335}{Check\+Game\+State}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_game_a040d0dd2cf4d367b6dece8b75a39560d}{Set\+Option\+For\+Robot}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_game}{IGame}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a41f85f360a3f11751436cca1f7e62037}{New\+Game}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a21dcd39435b12f8ac6f2df11c971285d}{Start\+Round}} (uint8\+\_\+t position)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{class_i_game_a719d5959389c66ec4cf9efdc2bf57cf3}{Get\+Board}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual IPlayer\+Ptr \mbox{\hyperlink{class_i_game_ac231d7948500d6519bd5266c15583815}{Get\+Player}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{class_i_game_aa27fdeb34d02633be165f891fbf4f46b}{Get\+Turn\+Number}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+::\+Board\+State}} \mbox{\hyperlink{class_i_game_a9afaf10c3d8227b91b6dcca4a85ec20b}{Get\+Game\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual IPlayer\+Ptr \mbox{\hyperlink{class_i_game_a5c09a3fa375255e23824bbfca764d86b}{Get\+Robot}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_ad473868f0fb6197ecb108cd461558b08}{Add\+Listener}} (IGame\+Listener\+Ptr listener)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a215fb43d755dc923639e949353bd3ebe}{Remove\+Listener}} (IGame\+Listener\+Ptr listener)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a34a92528cb0171920f35d18868e182cc}{Notify\+All\+Listeners}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}{$\sim$\+IGame}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a7eaa01287155f45af0a366cfd0856887}{Check\+Game\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{class_i_game_af6b2f91ac328c03d94562a4c23223856}{Set\+Option\+For\+Robot}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_ab28ed2c042ec89b177a4866c9fe3bc04}\label{class_game_ab28ed2c042ec89b177a4866c9fe3bc04}} 
+\mbox{\hyperlink{class_board}{Board}} {\bfseries m\+\_\+board}
+\item 
+\mbox{\Hypertarget{class_game_a6ae3dced07bbcd68fe5bae57a106444a}\label{class_game_a6ae3dced07bbcd68fe5bae57a106444a}} 
+IPlayer\+Ptr {\bfseries m\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_game_aa2670a2da2e3313bf028f5d436ebf441}\label{class_game_aa2670a2da2e3313bf028f5d436ebf441}} 
+IPlayer\+Ptr {\bfseries m\+\_\+robot}
+\item 
+\mbox{\Hypertarget{class_game_ac95544b6a687d5c5dfc93cdc0b9c4594}\label{class_game_ac95544b6a687d5c5dfc93cdc0b9c4594}} 
+bool {\bfseries m\+\_\+is\+Player\+Last}
+\item 
+\mbox{\Hypertarget{class_game_a817b18639f74258b9af9d2af4b98a199}\label{class_game_a817b18639f74258b9af9d2af4b98a199}} 
+uint8\+\_\+t {\bfseries m\+\_\+turn\+Number}
+\item 
+\mbox{\Hypertarget{class_game_a98af0f3ba28e8cd1da007693faacdc37}\label{class_game_a98af0f3ba28e8cd1da007693faacdc37}} 
+\mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+::\+Board\+State}} {\bfseries m\+\_\+game\+State}
+\item 
+\mbox{\Hypertarget{class_game_adb4aad794a45c83522116d7099a573ed}\label{class_game_adb4aad794a45c83522116d7099a573ed}} 
+bool {\bfseries m\+\_\+is\+Game\+Running}
+\item 
+\mbox{\Hypertarget{class_game_a16d43c5ccdf45f1628b3051f2cccaa28}\label{class_game_a16d43c5ccdf45f1628b3051f2cccaa28}} 
+std\+::vector$<$ IGame\+Listener\+Ptr $>$ {\bfseries m\+\_\+listeners}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_i_game}{IGame}}}
+\begin{DoxyCompactItemize}
+\item 
+static IGame\+Ptr \mbox{\hyperlink{class_i_game_a5fd1fc99eae40264db9f2cdfe986bd0c}{Produce}} ()
+\begin{DoxyCompactList}\small\item\em Static member. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_ab0013dcfed84705ce37b47daeaa56a5f}\label{class_game_ab0013dcfed84705ce37b47daeaa56a5f}} 
+\index{Game@{Game}!AddListener@{AddListener}}
+\index{AddListener@{AddListener}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{AddListener()}{AddListener()}}
+{\footnotesize\ttfamily void Game\+::\+Add\+Listener (\begin{DoxyParamCaption}\item[{IGame\+Listener\+Ptr}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function adds a listener to the listeners list. 
+\begin{DoxyParams}{Parameters}
+{\em listener} & An \mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} pointer to add. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_game_ad473868f0fb6197ecb108cd461558b08}{IGame}}.
+
+\mbox{\Hypertarget{class_game_a484b47a61b10ff74ce037a632a3c1335}\label{class_game_a484b47a61b10ff74ce037a632a3c1335}} 
+\index{Game@{Game}!CheckGameState@{CheckGameState}}
+\index{CheckGameState@{CheckGameState}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{CheckGameState()}{CheckGameState()}}
+{\footnotesize\ttfamily void Game\+::\+Check\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+Updates the game state private member ( Win/\+Lose etc.) 
+
+Implements \mbox{\hyperlink{class_i_game_a7eaa01287155f45af0a366cfd0856887}{IGame}}.
+
+\mbox{\Hypertarget{class_game_a7d3253a005fae04a4f3257c4aaf3e6f4}\label{class_game_a7d3253a005fae04a4f3257c4aaf3e6f4}} 
+\index{Game@{Game}!GetBoard@{GetBoard}}
+\index{GetBoard@{GetBoard}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetBoard()}{GetBoard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}} Game\+::\+Get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function returns the board assigned to the current game. \begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{class_board}{Board}} class object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_game_a719d5959389c66ec4cf9efdc2bf57cf3}{IGame}}.
+
+\mbox{\Hypertarget{class_game_a58c53c2813da72c3ce384f45f3b84cfe}\label{class_game_a58c53c2813da72c3ce384f45f3b84cfe}} 
+\index{Game@{Game}!GetGameState@{GetGameState}}
+\index{GetGameState@{GetGameState}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetGameState()}{GetGameState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+::\+Board\+State}} Game\+::\+Get\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function returns the state of the game at the current moment (Win/\+Lose/\+Draw etc.) \begin{DoxyReturn}{Returns}
+Board\+State enum containing the state of the game. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_game_a9afaf10c3d8227b91b6dcca4a85ec20b}{IGame}}.
+
+\mbox{\Hypertarget{class_game_ae1a55e45e44b048d5b53dcb76e2a5cb3}\label{class_game_ae1a55e45e44b048d5b53dcb76e2a5cb3}} 
+\index{Game@{Game}!GetPlayer@{GetPlayer}}
+\index{GetPlayer@{GetPlayer}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetPlayer()}{GetPlayer()}}
+{\footnotesize\ttfamily IPlayer\+Ptr Game\+::\+Get\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function returns a player pointer to the player that is currently playing the game. \begin{DoxyReturn}{Returns}
+A player pointer to the current player. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_game_ac231d7948500d6519bd5266c15583815}{IGame}}.
+
+\mbox{\Hypertarget{class_game_a3f6222642e08bdaaf0fda51a35d672c7}\label{class_game_a3f6222642e08bdaaf0fda51a35d672c7}} 
+\index{Game@{Game}!GetRobot@{GetRobot}}
+\index{GetRobot@{GetRobot}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetRobot()}{GetRobot()}}
+{\footnotesize\ttfamily IPlayer\+Ptr Game\+::\+Get\+Robot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function returns the robot player pointer. \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_player}{Player}} pointer pointing to the robot player. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_game_a5c09a3fa375255e23824bbfca764d86b}{IGame}}.
+
+\mbox{\Hypertarget{class_game_ab59d84506a7e47f92657c65a3427b5e2}\label{class_game_ab59d84506a7e47f92657c65a3427b5e2}} 
+\index{Game@{Game}!GetTurnNumber@{GetTurnNumber}}
+\index{GetTurnNumber@{GetTurnNumber}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetTurnNumber()}{GetTurnNumber()}}
+{\footnotesize\ttfamily uint8\+\_\+t Game\+::\+Get\+Turn\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function returns the number of moves played at the current moment. \begin{DoxyReturn}{Returns}
+Number of current turns. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_game_aa27fdeb34d02633be165f891fbf4f46b}{IGame}}.
+
+\mbox{\Hypertarget{class_game_a14336a0f72290d09393d50d9f6a00c07}\label{class_game_a14336a0f72290d09393d50d9f6a00c07}} 
+\index{Game@{Game}!NewGame@{NewGame}}
+\index{NewGame@{NewGame}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{NewGame()}{NewGame()}}
+{\footnotesize\ttfamily void Game\+::\+New\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function should start a new game. 
+
+Implements \mbox{\hyperlink{class_i_game_a41f85f360a3f11751436cca1f7e62037}{IGame}}.
+
+\mbox{\Hypertarget{class_game_ae3e3475f32f34fbef21d79dbbe363f5d}\label{class_game_ae3e3475f32f34fbef21d79dbbe363f5d}} 
+\index{Game@{Game}!NotifyAllListeners@{NotifyAllListeners}}
+\index{NotifyAllListeners@{NotifyAllListeners}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{NotifyAllListeners()}{NotifyAllListeners()}}
+{\footnotesize\ttfamily void Game\+::\+Notify\+All\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function removes a certain listener from the listeners list. 
+\begin{DoxyParams}{Parameters}
+{\em listener} & An \mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} pointer to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_game_a34a92528cb0171920f35d18868e182cc}{IGame}}.
+
+\mbox{\Hypertarget{class_game_ac8204fff3ed8fca305378e63a5d5c8a6}\label{class_game_ac8204fff3ed8fca305378e63a5d5c8a6}} 
+\index{Game@{Game}!RemoveListener@{RemoveListener}}
+\index{RemoveListener@{RemoveListener}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{RemoveListener()}{RemoveListener()}}
+{\footnotesize\ttfamily void Game\+::\+Remove\+Listener (\begin{DoxyParamCaption}\item[{IGame\+Listener\+Ptr}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function removes a certain listener from the listeners list. 
+\begin{DoxyParams}{Parameters}
+{\em listener} & An \mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} pointer to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_game_a215fb43d755dc923639e949353bd3ebe}{IGame}}.
+
+\mbox{\Hypertarget{class_game_a040d0dd2cf4d367b6dece8b75a39560d}\label{class_game_a040d0dd2cf4d367b6dece8b75a39560d}} 
+\index{Game@{Game}!SetOptionForRobot@{SetOptionForRobot}}
+\index{SetOptionForRobot@{SetOptionForRobot}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{SetOptionForRobot()}{SetOptionForRobot()}}
+{\footnotesize\ttfamily uint8\+\_\+t Game\+::\+Set\+Option\+For\+Robot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+Sets a random move for the robot player. \begin{DoxyReturn}{Returns}
+The position at which the robot randomly placed a sign. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_game_af6b2f91ac328c03d94562a4c23223856}{IGame}}.
+
+\mbox{\Hypertarget{class_game_accb2146c66bb668e27cca0715482609d}\label{class_game_accb2146c66bb668e27cca0715482609d}} 
+\index{Game@{Game}!StartRound@{StartRound}}
+\index{StartRound@{StartRound}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{StartRound()}{StartRound()}}
+{\footnotesize\ttfamily void Game\+::\+Start\+Round (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual member. 
+
+This function starts a new round. 
+
+Implements \mbox{\hyperlink{class_i_game_a21dcd39435b12f8ac6f2df11c971285d}{IGame}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game.\+h\item 
+Game.\+cpp\end{DoxyCompactItemize}

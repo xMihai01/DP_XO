@@ -1,0 +1,92 @@
+\hypertarget{class_player}{}\doxysection{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_aed68229dd33637ffb686f7fdc4af1ac8}\label{class_player_aed68229dd33637ffb686f7fdc4af1ac8}} 
+{\bfseries Player} (const std\+::string \&name, Sign sign\+Used)
+\item 
+Sign \mbox{\hyperlink{class_player_a923ecbe2a6dea8b5c5d1b1d8258915de}{Get\+Sign\+Used}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_player_a354fc50139e3c97370cd7043353238a5}{Get\+Name\+Used}} () const override
+\item 
+void \mbox{\hyperlink{class_player_a111eba558525df17022c57199d103f95}{Set\+Name}} (const std\+::string \&name) override
+\item 
+void \mbox{\hyperlink{class_player_ae40c52322cb33b8d6d7439a93d169507}{Set\+Sign\+Used}} (Sign sign) override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_player_ab7d831be3752f884b204242d7f54094c}\label{class_i_player_ab7d831be3752f884b204242d7f54094c}} 
+virtual Sign {\bfseries Get\+Sign\+Used} () const =0
+\item 
+\mbox{\Hypertarget{class_i_player_aeeaf472fcb000d4a03d54856e59a6330}\label{class_i_player_aeeaf472fcb000d4a03d54856e59a6330}} 
+virtual std\+::string {\bfseries Get\+Name\+Used} () const =0
+\item 
+\mbox{\Hypertarget{class_i_player_a959e94dde9062c21afeba62e0dc90534}\label{class_i_player_a959e94dde9062c21afeba62e0dc90534}} 
+virtual void {\bfseries Set\+Name} (const std\+::string \&name)=0
+\item 
+\mbox{\Hypertarget{class_i_player_ae8a3332db27ecc10e0733fe007703994}\label{class_i_player_ae8a3332db27ecc10e0733fe007703994}} 
+virtual void {\bfseries Set\+Sign\+Used} (Sign sign)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_i_player}{IPlayer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_player_a3a1703b1e21a47e4736ac29d11cad27b}\label{class_i_player_a3a1703b1e21a47e4736ac29d11cad27b}} 
+static IPlayer\+Ptr {\bfseries Produce} (bool is\+Robot, const std\+::string \&username)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a354fc50139e3c97370cd7043353238a5}\label{class_player_a354fc50139e3c97370cd7043353238a5}} 
+\index{Player@{Player}!GetNameUsed@{GetNameUsed}}
+\index{GetNameUsed@{GetNameUsed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetNameUsed()}{GetNameUsed()}}
+{\footnotesize\ttfamily std\+::string Player\+::\+Get\+Name\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_player}{IPlayer}}.
+
+\mbox{\Hypertarget{class_player_a923ecbe2a6dea8b5c5d1b1d8258915de}\label{class_player_a923ecbe2a6dea8b5c5d1b1d8258915de}} 
+\index{Player@{Player}!GetSignUsed@{GetSignUsed}}
+\index{GetSignUsed@{GetSignUsed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetSignUsed()}{GetSignUsed()}}
+{\footnotesize\ttfamily Sign Player\+::\+Get\+Sign\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_player}{IPlayer}}.
+
+\mbox{\Hypertarget{class_player_a111eba558525df17022c57199d103f95}\label{class_player_a111eba558525df17022c57199d103f95}} 
+\index{Player@{Player}!SetName@{SetName}}
+\index{SetName@{SetName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void Player\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_player}{IPlayer}}.
+
+\mbox{\Hypertarget{class_player_ae40c52322cb33b8d6d7439a93d169507}\label{class_player_ae40c52322cb33b8d6d7439a93d169507}} 
+\index{Player@{Player}!SetSignUsed@{SetSignUsed}}
+\index{SetSignUsed@{SetSignUsed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetSignUsed()}{SetSignUsed()}}
+{\footnotesize\ttfamily void Player\+::\+Set\+Sign\+Used (\begin{DoxyParamCaption}\item[{Sign}]{sign }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_player}{IPlayer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Player.\+h\item 
+Player.\+cpp\end{DoxyCompactItemize}

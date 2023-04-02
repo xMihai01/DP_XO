@@ -1,0 +1,54 @@
+\hypertarget{_game_8h_source}{}\doxysection{Game.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}IGame.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_game}{IGame}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}(\textcolor{keyword}{const}\ std::string\&\ username);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a14336a0f72290d09393d50d9f6a00c07}{NewGame}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_accb2146c66bb668e27cca0715482609d}{StartRound}}(uint8\_t\ position)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_board}{Board}}\ \mbox{\hyperlink{class_game_a7d3253a005fae04a4f3257c4aaf3e6f4}{GetBoard}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ IPlayerPtr\ \mbox{\hyperlink{class_game_ae1a55e45e44b048d5b53dcb76e2a5cb3}{GetPlayer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_game_ab59d84506a7e47f92657c65a3427b5e2}{GetTurnNumber}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board::BoardState}}\ \mbox{\hyperlink{class_game_a58c53c2813da72c3ce384f45f3b84cfe}{GetGameState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ IPlayerPtr\ \mbox{\hyperlink{class_game_a3f6222642e08bdaaf0fda51a35d672c7}{GetRobot}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ab0013dcfed84705ce37b47daeaa56a5f}{AddListener}}(IGameListenerPtr\ listener)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ac8204fff3ed8fca305378e63a5d5c8a6}{RemoveListener}}(IGameListenerPtr\ listener)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae3e3475f32f34fbef21d79dbbe363f5d}{NotifyAllListeners}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_game}{\string~Game}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a484b47a61b10ff74ce037a632a3c1335}{CheckGameState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_game_a040d0dd2cf4d367b6dece8b75a39560d}{SetOptionForRobot}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_board}{Board}}\ m\_board;}
+\DoxyCodeLine{00036\ \ \ \ \ IPlayerPtr\ m\_player;}
+\DoxyCodeLine{00037\ \ \ \ \ IPlayerPtr\ m\_robot;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isPlayerLast;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ uint8\_t\ m\_turnNumber;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board::BoardState}}\ m\_gameState;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isGameRunning;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::vector<IGameListenerPtr>\ m\_listeners;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+
+\end{DoxyCode}

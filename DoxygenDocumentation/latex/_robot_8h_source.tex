@@ -1,0 +1,30 @@
+\hypertarget{_robot_8h_source}{}\doxysection{Robot.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}IPlayer.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_robot}{Robot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_player}{IPlayer}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_robot}{Robot}}();}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ Sign\ GetSignUsed()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00012\ \ \ \ \ std::string\ GetNameUsed()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ SetName(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ SetSignUsed(Sign\ sign)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//static\ IPlayerPtr\ Produce();}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ m\_name;}
+\DoxyCodeLine{00022\ \ \ \ \ Sign\ m\_signUsed;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+
+\end{DoxyCode}

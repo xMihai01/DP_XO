@@ -1,0 +1,66 @@
+\hypertarget{class_i_game_listener}{}\doxysection{IGame\+Listener Class Reference}
+\label{class_i_game_listener}\index{IGameListener@{IGameListener}}
+
+
+\mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} interface.  
+
+
+
+
+{\ttfamily \#include $<$IGame\+Listener.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_game_listener_a854158789ccf92cf2cf71dc3ca447564}{Update}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_listener_aedab216ffe04f04df1c53f86604bd2b8}{Show\+Game\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_game_listener_aa75029cbc38192375b5fcf175eebca54}{$\sim$\+IGame\+Listener}} ()=default
+\begin{DoxyCompactList}\small\item\em Pure virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} interface. 
+
+Interface for implementing the observer design pattern. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_game_listener_aa75029cbc38192375b5fcf175eebca54}\label{class_i_game_listener_aa75029cbc38192375b5fcf175eebca54}} 
+\index{IGameListener@{IGameListener}!````~IGameListener@{$\sim$IGameListener}}
+\index{````~IGameListener@{$\sim$IGameListener}!IGameListener@{IGameListener}}
+\doxysubsubsection{\texorpdfstring{$\sim$IGameListener()}{~IGameListener()}}
+{\footnotesize\ttfamily virtual IGame\+Listener\+::$\sim$\+IGame\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Pure virtual destructor. 
+
+Used for deallocating memory for the listeners. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_game_listener_aedab216ffe04f04df1c53f86604bd2b8}\label{class_i_game_listener_aedab216ffe04f04df1c53f86604bd2b8}} 
+\index{IGameListener@{IGameListener}!ShowGameState@{ShowGameState}}
+\index{ShowGameState@{ShowGameState}!IGameListener@{IGameListener}}
+\doxysubsubsection{\texorpdfstring{ShowGameState()}{ShowGameState()}}
+{\footnotesize\ttfamily virtual void IGame\+Listener\+::\+Show\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual member. 
+
+Used for showing the game state after the listener was notified. \mbox{\Hypertarget{class_i_game_listener_a854158789ccf92cf2cf71dc3ca447564}\label{class_i_game_listener_a854158789ccf92cf2cf71dc3ca447564}} 
+\index{IGameListener@{IGameListener}!Update@{Update}}
+\index{Update@{Update}!IGameListener@{IGameListener}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void IGame\+Listener\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual member. 
+
+Used for updating the board after the listener was notified. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+IGame\+Listener.\+h\end{DoxyCompactItemize}

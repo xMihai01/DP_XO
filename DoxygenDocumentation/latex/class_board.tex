@@ -1,0 +1,172 @@
+\hypertarget{class_board}{}\doxysection{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+\mbox{\hyperlink{class_board}{Board}} class.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+State}} \{ \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a119eac47719cc9be7b99124712e229da}{Win}}
+, \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a02cf70d59ed69d7c9dd21d30e490e050}{Lose}}
+, \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a2d03c2d5a7ec65ef4619e0582c272ec2}{Draw}}
+, \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8a14a07803db889bd3a8f8d182ff61975c}{Unfinished}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_board}{Board}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_board_a7a0a7a03e33b1ccb652d9c2b55afe71b}\label{class_board_a7a0a7a03e33b1ccb652d9c2b55afe71b}} 
+void {\bfseries Reset\+Board} ()
+\begin{DoxyCompactList}\small\item\em Void function used for resetting the board to the initial state. \end{DoxyCompactList}\item 
+std\+::array$<$ std\+::array$<$ Sign, board\+Size $>$, board\+Size $>$ \mbox{\hyperlink{class_board_a7749f1333344d4c61f973111822e3dfc}{Get\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Member funcion used to return the matrix of the board with all the curent signs assigned to each position. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+set$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_board_a418b146664ba045bef68ee38f34bf6c8}{Get\+Available\+Indices}} () const
+\begin{DoxyCompactList}\small\item\em Member function used to return the unordered set off all the available (unassigned) spots on the game board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+State}} \mbox{\hyperlink{class_board_add6700c05f0a1d7c845ba51e042c8580}{Check\+Game\+State}} ()
+\begin{DoxyCompactList}\small\item\em Member function returning the state of the game after checking the board signs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_af0e803fa17633662d5982024394b6c75}{set\+Option}} (uint8\+\_\+t option, IPlayer\+Ptr player)
+\begin{DoxyCompactList}\small\item\em Member function used for making a move in the game board. \end{DoxyCompactList}\item 
+Sign \mbox{\hyperlink{class_board_a0f8c2867e9004f51551db432b695558f}{Get\+Board\+Slot\+State}} (int position) const
+\begin{DoxyCompactList}\small\item\em Member function used for return the sign on the board at a specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_board}{Board}} class. 
+
+A class used to store the dimension, matrix of a game board. The game board contains signs(X/O). This class is used for making moves on the board as well as returning states of the game. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_board_a75050aeee611816af6c13175eedbada8}\label{class_board_a75050aeee611816af6c13175eedbada8}} 
+\index{Board@{Board}!BoardState@{BoardState}}
+\index{BoardState@{BoardState}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{BoardState}{BoardState}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+::\+Board\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+An enum type. This is used for storing the state of the game. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Win@{Win}!Board@{Board}}\index{Board@{Board}!Win@{Win}}}\mbox{\Hypertarget{class_board_a75050aeee611816af6c13175eedbada8a119eac47719cc9be7b99124712e229da}\label{class_board_a75050aeee611816af6c13175eedbada8a119eac47719cc9be7b99124712e229da}} 
+Win&If the game is won \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lose@{Lose}!Board@{Board}}\index{Board@{Board}!Lose@{Lose}}}\mbox{\Hypertarget{class_board_a75050aeee611816af6c13175eedbada8a02cf70d59ed69d7c9dd21d30e490e050}\label{class_board_a75050aeee611816af6c13175eedbada8a02cf70d59ed69d7c9dd21d30e490e050}} 
+Lose&If the game is lost \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Draw@{Draw}!Board@{Board}}\index{Board@{Board}!Draw@{Draw}}}\mbox{\Hypertarget{class_board_a75050aeee611816af6c13175eedbada8a2d03c2d5a7ec65ef4619e0582c272ec2}\label{class_board_a75050aeee611816af6c13175eedbada8a2d03c2d5a7ec65ef4619e0582c272ec2}} 
+Draw&If the game is a tie \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unfinished@{Unfinished}!Board@{Board}}\index{Board@{Board}!Unfinished@{Unfinished}}}\mbox{\Hypertarget{class_board_a75050aeee611816af6c13175eedbada8a14a07803db889bd3a8f8d182ff61975c}\label{class_board_a75050aeee611816af6c13175eedbada8a14a07803db889bd3a8f8d182ff61975c}} 
+Unfinished&If the game is not yet finished \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_board_a9ee491d4fea680cf69b033374a9fdfcb}\label{class_board_a9ee491d4fea680cf69b033374a9fdfcb}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_board}{Board}} default constructor. 
+
+This constructor initializez all the elements of the board matrix with the sign \char`\"{}\+None\char`\"{} and adds all the indices of the matrix to the available indices set. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_add6700c05f0a1d7c845ba51e042c8580}\label{class_board_add6700c05f0a1d7c845ba51e042c8580}} 
+\index{Board@{Board}!CheckGameState@{CheckGameState}}
+\index{CheckGameState@{CheckGameState}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{CheckGameState()}{CheckGameState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board_a75050aeee611816af6c13175eedbada8}{Board\+::\+Board\+State}} Board\+::\+Check\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Member function returning the state of the game after checking the board signs. 
+
+\begin{DoxyReturn}{Returns}
+State of the board (Win/\+Lose etc.) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a418b146664ba045bef68ee38f34bf6c8}\label{class_board_a418b146664ba045bef68ee38f34bf6c8}} 
+\index{Board@{Board}!GetAvailableIndices@{GetAvailableIndices}}
+\index{GetAvailableIndices@{GetAvailableIndices}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{GetAvailableIndices()}{GetAvailableIndices()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$ uint8\+\_\+t $>$ Board\+::\+Get\+Available\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Member function used to return the unordered set off all the available (unassigned) spots on the game board. 
+
+\begin{DoxyReturn}{Returns}
+Unordered set of available indices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a7749f1333344d4c61f973111822e3dfc}\label{class_board_a7749f1333344d4c61f973111822e3dfc}} 
+\index{Board@{Board}!GetBoard@{GetBoard}}
+\index{GetBoard@{GetBoard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{GetBoard()}{GetBoard()}}
+{\footnotesize\ttfamily std\+::array$<$ std\+::array$<$ Sign, board\+Size $>$, board\+Size $>$ Board\+::\+Get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Member funcion used to return the matrix of the board with all the curent signs assigned to each position. 
+
+\begin{DoxyReturn}{Returns}
+The game board and the current signs assigned to each position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a0f8c2867e9004f51551db432b695558f}\label{class_board_a0f8c2867e9004f51551db432b695558f}} 
+\index{Board@{Board}!GetBoardSlotState@{GetBoardSlotState}}
+\index{GetBoardSlotState@{GetBoardSlotState}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{GetBoardSlotState()}{GetBoardSlotState()}}
+{\footnotesize\ttfamily Sign Board\+::\+Get\+Board\+Slot\+State (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption}) const}
+
+
+
+Member function used for return the sign on the board at a specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & integer, a board position to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sign located at the position parameter on the board. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+QTstyle\+\_\+\+Test(), $\sim$\+QTstyle\+\_\+\+Test(), test\+Me\+Too() and public\+Var() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_board_af0e803fa17633662d5982024394b6c75}\label{class_board_af0e803fa17633662d5982024394b6c75}} 
+\index{Board@{Board}!setOption@{setOption}}
+\index{setOption@{setOption}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{setOption()}{setOption()}}
+{\footnotesize\ttfamily bool Board\+::set\+Option (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{option,  }\item[{IPlayer\+Ptr}]{player }\end{DoxyParamCaption})}
+
+
+
+Member function used for making a move in the game board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & an unsigned int meaning the position on the board that the player wants to put a sign on. \\
+\hline
+{\em s} & a player pointer, used for pointing to the player that made the move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not the player managed to make a valid move on the board 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Board.\+h\item 
+Board.\+cpp\end{DoxyCompactItemize}
